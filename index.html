@@ -16,29 +16,31 @@
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"type="javascript/text"</script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"type="javascript/text"></script>
 		<script>
 			// handle links with @href started with '#' only
 			$(document).on('click', 'a[href^="#"]', function(e) {
 
 				console.log('LINK WAS CLICKED');
+		   		// prevent standard hash navigation (avoid blinking in IE)
+			    e.preventDefault();
+
 			    // target element id
 			    var id = $(this).attr('href');
 
 			    // target element
 			    var $id = $(id);
 			    if ($id.length === 0) {
-			        return;
+			    	console.log('returned');
+			    	$('body, html').animate({scrollTop:0}, 1000)
+			       return;
 			    }
-
-			    // prevent standard hash navigation (avoid blinking in IE)
-			    e.preventDefault();
-
+			    
 			    // top position relative to the document
 			    var pos = $(id).offset().top;
 
 			    // animated top scrolling
-			    $('body, html').animate({scrollTop: pos});
+			    $('body, html').animate({scrollTop: pos}, 1000);
 			});
 		</script>
 		<noscript>
