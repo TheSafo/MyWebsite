@@ -63,6 +63,10 @@
 		font-size: 1.25em;
 	}
 
+	h4 {
+		color: #000;
+	}
+
 	sub {
 		font-size: 0.8em;
 		position: relative;
@@ -226,6 +230,7 @@
 			.image.featured img {
 				display: block;
 				width: 100%;
+				border-radius: 6px 6px 0px 0px;
 			}
 
 /* Icon */
