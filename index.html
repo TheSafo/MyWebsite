@@ -18,30 +18,27 @@
 		<script src="js/init.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"type="javascript/text"></script>
 		<script>
-			// handle links with @href started with '#' only
-			$(document).on('click', 'a[href^="#"]', function(e) {
+		$(function() {
+		    $('a[href*=#]:not([href=#])').click(function() {
+		    	console.log('Link to some div clicked');
+		        var target = $(this.hash);
+		        target = target.length ? target : $('[name=' + this.hash.substr(1) +']');
+		        if (target.length) {
+		            $('html,body').animate({
+		              scrollTop: target.offset().top
+		            }, 1000);
+		            return false;
+		        }
+		    });
+		});
 
-				console.log('LINK WAS CLICKED');
-		   		// prevent standard hash navigation (avoid blinking in IE)
-			    e.preventDefault();
-
-			    // target element id
-			    var id = $(this).attr('href');
-
-			    // target element
-			    var $id = $(id);
-			    if ($id.length === 0) {
-			    	console.log('returned');
-			    	$('body, html').animate({scrollTop:0}, 1000)
-			       return;
-			    }
-			    
-			    // top position relative to the document
-			    var pos = $(id).offset().top;
-
-			    // animated top scrolling
-			    $('body, html').animate({scrollTop: pos}, 1000);
-			});
+		$(function() {
+		    $('a[href=#]').click(function() {
+		    	console.log('Link  to top clicked');
+		        $('body, html').animate({scrollTop:0}, 1000)
+		        return false;
+		    });
+		});
 		</script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
