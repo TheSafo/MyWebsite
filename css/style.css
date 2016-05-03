@@ -67,6 +67,16 @@
 		color: #000;
 	}
 
+	h5 {
+		color: #000;
+		position: relative;
+		width: 100%;
+		text-align: center;
+		font-size: 4em;
+		padding-top: .5em;
+		padding-bottom: .5em;
+	}
+
 	sub {
 		font-size: 0.8em;
 		position: relative;
