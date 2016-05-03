@@ -6,7 +6,12 @@
 -->
 <html>
 	<head>
-		<title>Saf by Marlena</title>
+		<title>Jake Saferstein</title>
+
+		<link rel="shortcut icon" href="images/white_favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="images/white_favicon.ico" type="image/ico" />
+		<link rel="mask-icon" href="images/white_favicon.ico" color="red">
+
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -23,9 +28,13 @@
 		    	console.log('Link to some div clicked');
 		        var target = $(this.hash);
 		        target = target.length ? target : $('[name=' + this.hash.substr(1) +']');
+
+		        var h = $('#header').height() * 2.75;
+		        console.log(' ' + h);
+
 		        if (target.length) {
 		            $('html,body').animate({
-		              scrollTop: target.offset().top
+		              scrollTop: (target.offset().top - h)
 		            }, 1000);
 		            return false;
 		        }
@@ -49,36 +58,44 @@
 	</head>
 	<body>
 
+	<!-- Header -->		
+	<div id="header" class="skel-panels-fixed">
+		<div id="logo">
+			<h1><a href="index.html">Saf</a></h1>
+			<span class="tag">by Marlena</span>
+		</div>
+		<nav id="nav">
+			<ul>
+				<li class="active"><a href="#">Latest</a></li>
+				<li><a href="#Projects">Projects</a></li>
+				<li><a href="#main">Other Info</a></li>
+				<li><a href="#footer">Contact</a></li>
+				<!--
+				<li><a href="right-sidebar.html">Right Sidebar</a></li>
+				<li><a href="no-sidebar.html">No Sidebar</a></li>
+				-->
+			</ul>
+		</nav>
+	</div>
+
 		<!-- Wrapper -->
-			<div class="wrapper style1">
+		<div class="wrapper style1">
+			<!-- Banner -->
+				<div id="banner" class="container">
+					<section>
 
-				<!-- Header -->
-					<div id="header" class="skel-panels-fixed">
-						<div id="logo">
-							<h1><a href="index.html">Saf</a></h1>
-							<span class="tag">by Marlena</span>
-						</div>
-						<nav id="nav">
-							<ul>
-								<li class="active"><a href="index.html">Homepage</a></li>
-								<li><a href="#extra">Extra</a></li>
-								<li><a href="right-sidebar.html">Right Sidebar</a></li>
-								<li><a href="no-sidebar.html">No Sidebar</a></li>
-							</ul>
-						</nav>
+					<div class="circular">
+						<!-- <img src="images/linkedinprof.png" alt="" /> -->
 					</div>
+					<marquee direction="right">
+						<p><strong>Saf Saf Saf Saf Saf Saf </strong></p>
+						</marquee>
+						<a href="#" class="button medium">Read my blog</a>
+					</section>
+				</div>
 
-				<!-- Banner -->
-					<div id="banner" class="container">
-						<section>
-							<p><strong>Saf Saf Saf Saf Saf Saf </strong></p>
-							<!--<p>This is <strong>Jake Saferstein</strong>, a responsive HTML5 site template freebie by <a href="http://templated.co">TEMPLATED</a>. Released for free under the <a href="http://templated.co/license">Creative Commons Attribution</a> license, so use it for whatever (personal or commercial) &ndash; just give us credit! Check out more of our stuff at <a href="http://templated.co">our site</a> or follow us on <a href="http://twitter.com/templatedco">Twitter</a>.</p> -->
-							<a href="#" class="button medium">Read my blog</a>
-						</section>
-					</div>
-
-				<!-- Extra -->
-					<div id="extra">
+				<!-- Projects -->
+					<div id="Projects">
 						<div class="container">
 							<div class="row no-collapse-1">
 								<section class="4u"> <a href="#" class="image featured"><img src="images/openpad.png" alt=""></a>
@@ -130,8 +147,9 @@
 												<h3><a href="http://www.brown.edu">Brown University</a></h3>
 												<h4>2015+</h4>
 												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
-											<li class="fa fa-leaf">
-												<h3>Nice meme</h3>
+											<li class="fa fa-file-text-o">
+												<h3>Full Resume</h3>
+												<h4>Last Updated: XXX</h4>
 												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
 										</ul>
 									</section>
@@ -152,7 +170,6 @@
 							</div>
 						</div>
 					</div>
-
 	</div>
 
 	<!-- Footer -->
@@ -162,6 +179,7 @@
 					<header class="major">
 						<h2>Contact me</h2>
 						<span class="byline">Feel free to contact me with any questions you have</span>
+						<span class="byline"> jakesafo@gmail.com</span>
 					</header>
 					<form method="post" action="#">
 						<div class="row half">
@@ -197,7 +215,6 @@
 		<div id="copyright">
 			<div class="container">
 				<div class="copyright">
-					<p>Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)</p>
 					<ul class="icons">
 						<li><a href="https://www.facebook.com/jake.saferstein" class="fa fa-facebook"><span>Facebook</span></a></li>
 						<li><a href="https://www.linkedin.com/in/jake-saferstein-04b889117?trk=hp-identity-name" class="fa fa-linkedin"><span>Linked In</span></a></li>
@@ -205,6 +222,7 @@
 						<!--<li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
 						<li><a href="#" class="fa fa-google-plus"><span>Google+</span></a></li>-->
 					</ul>
+					<p>Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)</p>
 				</div>
 			</div>
 		</div>

@@ -95,6 +95,7 @@
 		text-align: center;
 	}
 
+
 	header.major {
 		padding-bottom: 3em;
 		text-transform: uppercase;
@@ -564,6 +565,8 @@
 		color: #fff;
 		padding: 0em 4em;
 		margin-bottom: 6em;
+		width: 100%;
+		max-width: 100%;
 	}
 
 		#banner p {
@@ -574,6 +577,28 @@
 	#banner strong,
 	#banner a {
 		color: inherit;
+	}
+
+	.circular {
+		width: 25%;
+		/*height: 25%;*/
+		padding-top: 25%;
+		margin: 0 auto;
+		border-radius: 50%;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		background: url(../images/linkedinprof.png) no-repeat;
+		background-size: cover;
+		background-position: center center;
+
+/*		box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+		-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+		-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);*/
+	}
+
+	.circular img {
+		opacity: 0;
+		filter: alpha(opacity=0);
 	}
 
 /* Main */
