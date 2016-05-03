@@ -22,9 +22,30 @@
 		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"type="javascript/text"></script>
+		<script src="js/jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="css/jquery.modal.css" type="text/css" media="screen" />
 		<script>
 		$(function() {
 		    $('a[href*=#]:not([href=#])').click(function() {
+
+		    	var refthing = $(this).attr('href');
+
+		    	if($.inArray(refthing, ['#blogTemp', '#openpad', 
+		    		'#mynote', '#foodme']) >= 0) {
+			    	console.log('Modal displaying');
+		      		// event.preventDefault();
+		      		$(this).modal({
+		        		fadeDuration: 225
+		      		});	
+		      		return false;
+	      		}
+
+		    	var relthing = $(this).attr('rel');
+		    	if(relthing != null) {
+			    	console.log('Rel found:'+relthing);
+		    		return false;
+		    	}
+
 		    	console.log('Link to some div clicked');
 		        var target = $(this.hash);
 		        target = target.length ? target : $('[name=' + this.hash.substr(1) +']');
@@ -56,6 +77,7 @@
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
+
 	<body>
 
 	<!-- Header -->		
@@ -90,7 +112,10 @@
 					<marquee direction="right">
 						<p><strong>Saf Saf Saf Saf Saf Saf </strong></p>
 						</marquee>
-						<a href="#" class="button medium">Read my blog</a>
+
+						<!-- Link to open the modal -->
+						<a href="#blogTemp" rel="modal:open" class="button medium">Read my blog</a>
+						<!-- <p><a href="#blogTemp" rel="modal:open">Open Modal</a></p> -->
 					</section>
 				</div>
 
@@ -101,20 +126,20 @@
 								<section class="4u"> <a href="#" class="image featured"><img src="images/openpad.png" alt=""></a>
 									<div class="box">
 										<p>Openpad is a c++ library that allows you to make your game playable using a smartphone as a controller.</p>
-										<a href="#" class="button">Read More</a> </div>
+										<a href="#openpad" rel="modal:open" class="button">Read More</a> </div>
 								</section>
 								<section class="4u"> <a href="#" class="image featured"><img src="images/mynoteblackbars.png" alt=""></a>
 									<div class="box">
 										<p>MyNote is an Apple TV app that allows the user to draw on the screen and go through a slideshow using a Myo arm band.</p>
-										<a href="#" class="button">Read More</a> </div>
+										<a href="#mynote" rel="modal:open" class="button">Read More</a> </div>
 								</section>
 								<section class="4u"> <a href="#" class="image featured"><img src="images/foodme.png" alt=""></a>
 									<div class="box">
 										<p>FoodMe is a an app that asks the user four questions then chooses a nearby restuaraunt to eat at.</p>
-										<a href="#" class="button">Read More</a> </div>
+										<a href="#foodme" rel="modal:open" class="button">Read More</a> </div>
 								</section>
 							</div>
-							<div class="row no-collapse-1">
+<!-- 							<div class="row no-collapse-1">
 								<section class="4u"> <a href="#" class="image featured"><img src="images/pic01.jpg" alt=""></a>
 									<div class="box">
 										<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum  wisi maecenas ligula.</p>
@@ -130,7 +155,7 @@
 										<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum  wisi maecenas ligula.</p>
 										<a href="#" class="button">Read More</a> </div>
 								</section>
-							</div>
+							</div> -->
 						</div>
 					</div>
 
@@ -226,6 +251,48 @@
 				</div>
 			</div>
 		</div>
+
+	<!-- Modal HTML embedded directly into document -->
+	<div id="blogTemp" style="display:none;">
+		<p>Thanks for clicking BLOGGING.  That felt good. <a href="#" rel="modal:close">Close</a> or press ESC</p>
+		<div>
+		<div class="image modalimg fit">
+			<img src="images/pic01.jpg"/>
+		</div>
+	</div>
+
+	<div id="openpad" style="display:none;">
+		<p>Thanks for clicking OPENPAD.  That felt good. <a href="#" rel="modal:close">Close</a> or press ESC</p>
+		<div class="image modalimg fit">
+			<img src="images/openpad.png"/>
+		</div>
+	</div>
+
+	<div id="mynote" style="display:none;">
+		<p>Thanks for clicking MYNOTE.  That felt good. <a href="#" rel="modal:close">Close</a> or press ESC</p>
+		<div class="image modalimg fit">
+			<img src="images/mynoteblackbars.png"/>
+		</div>
+	</div>
+
+	<div id="foodme" style="display:none;">
+		<p>Thanks for clicking FOODME.  That felt good. <a href="#" rel="modal:close">Close</a> or press ESC</p>
+		<div class="image modalimg fit">
+			<img src="images/foodme.png"/>
+		</div>
+	</div>
+
+	<!-- Modal JS to edit animations -->
+<!-- 	<script>
+	    $('a[href="#blogTemp"]', 'a[href="#openpad"]', 'a[href="#mynote"]', 'a[href="#foodme"]').click(function(event) {
+	    	console.log('Modal displaying');
+      		event.preventDefault();
+      		$(this).modal({
+        		fadeDuration: 250
+      		});
+	    });
+	</script> -->
+
 
 	</body>
 </html>
