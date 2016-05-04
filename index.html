@@ -42,9 +42,21 @@
 		    		'#mynote', '#foodme']) >= 0) {
 			    	console.log('Modal displaying');
 		      		// event.preventDefault();
-		      		$(this).modal({
+
+		      		var carousel = $(this).modal({
 		        		fadeDuration: 225
-		      		});	
+		      		}).find("jcarousel");
+
+	      		 	// setTimeout(function() {carousel.jcarousel('reload'); console.log('Meme');}, 540)
+
+	      		 	setTimeout(function() {
+			    		// var width = carousel.innerWidth();
+			    		var width = $(window).width() * .75 * .8 * .9;
+
+			    		console.log('width '+width);
+		            	carousel.jcarousel('items').css('width', width + 'px');
+	      		 	}, 500)
+
 		      		return false;
 	      		}
 
@@ -89,11 +101,12 @@
 
 	<body>
 
+
 	<!-- Header -->		
 	<div id="header" class="skel-panels-fixed">
 		<div id="logo">
 			<h1><a href="index.html">Saf</a></h1>
-			<span class="tag">by Marlena</span>
+			<span class="tag">and some Sam Greenberg</span>
 		</div>
 		<nav id="nav">
 			<ul>
@@ -108,9 +121,25 @@
 			</ul>
 		</nav>
 	</div>
-
 		<!-- Wrapper -->
 		<div class="wrapper style1">
+
+
+		<div class="jcarousel-wrapper">
+            <div class="jcarousel">
+	             <div class="outercarousel">
+	                <div class="xxx"><img src="images/pic01.jpg"></div>
+                    <div class="xxx"><img src="images/pic02.jpg"></div>
+                    <div class="xxx"><img src="images/pic03.jpg"></div>
+                    <div class="xxx"><img src="images/pic04.jpg"></div>
+	            </div>
+            </div>
+
+            <a href="" class="jcarousel-control-prev">&lsaquo;</a>
+            <a href="" class="jcarousel-control-next">&rsaquo;</a>
+            <p class="jcarousel-pagination"></p>
+        </div>
+
 			<!-- Banner -->
 				<div id="banner" class="container">
 					<section>
@@ -266,32 +295,23 @@
 
 		<div class="jcarousel-wrapper">
             <div class="jcarousel">
-                <ul>
-                    <li><img src="../_shared/img/img1.jpg" alt=""></li>
-                    <li><img src="../_shared/img/img2.jpg" alt=""></li>
-                    <li><img src="../_shared/img/img3.jpg" alt=""></li>
-                    <li><img src="../_shared/img/img4.jpg" alt=""></li>
-                    <li><img src="../_shared/img/img5.jpg" alt=""></li>
-                    <li><img src="../_shared/img/img6.jpg" alt=""></li>
-                </ul>
+	             <div class="outercarousel">
+	                <div class="xxx"><img src="images/pic01.jpg"></div>
+                    <div class="xxx"><img src="images/pic02.jpg"></div>
+                    <div class="xxx"><img src="images/pic03.jpg"></div>
+                    <div class="xxx"><img src="images/pic04.jpg"></div>
+	            </div>
             </div>
 
-            <p class="photo-credits">
-                Photos by <a href="http://www.mw-fotografie.de">Marc Wiegelmann</a>
-            </p>
-
-            <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
-            <a href="#" class="jcarousel-control-next">&rsaquo;</a>
-            
-            <p class="jcarousel-pagination">
-                
-            </p>
+            <a href="" class="jcarousel-control-prev">&lsaquo;</a>
+            <a href="" class="jcarousel-control-next">&rsaquo;</a>
+            <p class="jcarousel-pagination"></p>
         </div>
 
 	    <h5>BLOG SHIT IDK</h5>
 
 		<p>
-			Thanks for clicking BLOGGING.  That felt good. <a href="#" rel="modal:close">Close</a> or press ESC
+			Thanks for clicking BLOGGING.  That felt good. <a href="" rel="modal:close">Close</a> or press ESC
 
 			This is just filler. This is just filler.This is just filler.This is just filler.This is just filler.This is just filler.This is just filler.This is just filler.This is just filler.This is just filler.This is just filler.This is just filler.This is just filler.This is just filler.This is just filler.This is just filler.This is just filler.This is just filler.This is just filler.This is just filler.This is just filler.This is just filler.This is just filler.This is just filler.This is just filler.This is just filler. 
 		</p>
@@ -300,21 +320,21 @@
 	</div>
 
 	<div id="openpad" style="display:none;">
-		<p>Thanks for clicking OPENPAD.  That felt good. <a href="#" rel="modal:close">Close</a> or press ESC</p>
+		<p>Thanks for clicking OPENPAD.  That felt good. <a href="" rel="modal:close">Close</a> or press ESC</p>
 	</div>
 
 	<div id="mynote" style="display:none;">
 		<div class="image modalimg fit">
 			<img src="images/mynoteblackbars.png"/>
 		</div>
-		<p>Thanks for clicking MYNOTE.  That felt good. <a href="#" rel="modal:close">Close</a> or press ESC</p>
+		<p>Thanks for clicking MYNOTE.  That felt good. <a href="" rel="modal:close">Close</a> or press ESC</p>
 	</div>
 
 	<div id="foodme" style="display:none;">
 		<div class="image modalimg fit">
 			<img src="images/foodme.png"/>
 		</div>
-		<p>Thanks for clicking FOODME.  That felt good. <a href="#" rel="modal:close">Close</a> or press ESC</p>
+		<p>Thanks for clicking FOODME.  That felt good. <a href="" rel="modal:close">Close</a> or press ESC</p>
 	</div>
 	</body>
 
