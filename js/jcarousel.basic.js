@@ -9,10 +9,13 @@
             var element = $(this),
                 width = element.innerWidth();
 
-            if(width < 100)
+            //This is necessary cuz responsive design is hard :(
+            if(width < $(window).width()*.8*.8*.9*.9 *.95)
             {
                                     // var width = carousel.innerWidth();
-                    width = ($(window).width() * .8 * .8 -20) * .9;
+                    width = $(window).width() * .8 * .8 * .9 *.9 *.95;
+
+                    console.log('Window Width: ' + $(window).width());
 
                     // console.log('width '+width);
                     // carousel.jcarousel('xxx').css('width', width + 'px');

@@ -51,11 +51,14 @@
 
 	      		 	setTimeout(function() {
 			    		// var width = carousel.innerWidth();
-			    		var width = $(window).width() * .75 * .8 * .9;
+			    		// var width = $(window).width() * .75 * .8 * .9;
 
-			    		console.log('width '+width);
-		            	carousel.jcarousel('items').css('width', width + 'px');
-	      		 	}, 500)
+			    		carousel.jcarousel().css('width', '50%');
+			    		carousel.jcarousel('reload');
+
+			    		console.log('Memed');
+		            	// carousel.jcarousel('items').css('width', width + 'px');
+	      		 	}, 1000)
 
 		      		return false;
 	      		}

@@ -2,12 +2,12 @@
 .jcarousel-wrapper {
     margin: auto;
     position: relative;
-    border: 10px solid #000;
+    /*border: 10px solid #000;*/
     width: 80%;
     height: 40%;
-    -webkit-border-radius: 5px;
-       -moz-border-radius: 5px;
-            border-radius: 5px;
+    -webkit-border-radius: 15px;
+       -moz-border-radius: 15px;
+            border-radius: 15px;
     -webkit-box-shadow: 0 0 2px #999;
        -moz-box-shadow: 0 0 2px #999;
             box-shadow: 0 0 2px #999;
