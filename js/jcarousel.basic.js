@@ -2,7 +2,7 @@
     $(function() {
 
     $('.jcarousel')
-        .on('jcarousel:create', function() {
+        .on('jcarousel:create jcarousel:reload', function() {
 
             console.log('Created slider');
 
@@ -10,10 +10,10 @@
                 width = element.innerWidth();
 
             //This is necessary cuz responsive design is hard :(
-            if(width < $(window).width()*.8*.8*.9*.9 *.95)
+            if(width < $(window).width()*.8*.8*.9*.8725)
             {
                                     // var width = carousel.innerWidth();
-                    width = $(window).width() * .8 * .8 * .9 *.9 *.95;
+                    width = $(window).width() * .8 * .8 * .9 *.8725; //*.95;
 
                     console.log('Window Width: ' + $(window).width());
 
@@ -28,19 +28,19 @@
             // eg. `width = width / 3` to display 3 items at a time.
             element.jcarousel('items').css('width', width + 'px');
         })
-        .on('jcarousel:reload', function() {
-            console.log('Reload slider');
+        // .on('jcarousel:reload', function() {
+        //     console.log('Reload slider');
 
-            var element = $(this),
-                width = element.innerWidth();
+        //     var element = $(this),
+        //         width = element.innerWidth();
 
-            console.log('Width: ' + width);
+        //     console.log('Width: ' + width);
 
-            // This shows 1 item at a time.
-            // Divide `width` to the number of items you want to display,
-            // eg. `width = width / 3` to display 3 items at a time.
-            element.jcarousel('items').css('width', width + 'px');
-        })
+        //     // This shows 1 item at a time.
+        //     // Divide `width` to the number of items you want to display,
+        //     // eg. `width = width / 3` to display 3 items at a time.
+        //     element.jcarousel('items').css('width', width + 'px');
+        // })
         .jcarousel({
             // Your configurations options
         });
