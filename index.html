@@ -109,7 +109,7 @@
 	<div id="header" class="skel-panels-fixed">
 		<div id="logo">
 			<h1><a href="index.html">Saf</a></h1>
-			<span class="tag">and some Sam Greenberg</span>
+			<!-- <span class="tag">and some Sam Greenberg</span> -->
 		</div>
 		<nav id="nav">
 			<ul>
@@ -151,9 +151,9 @@
 						<!-- <img src="images/linkedinprof.png" alt="" /> -->
 					</div>
 						<!-- <p><strong>Saf?</strong></p> -->
-						<h2>About Me</h2>
+						<h6>About Me</h6>
 
-						I'm Jake
+						<!-- <h1>I'm Jake</h1> -->
 
 						<!-- Link to open the modal -->
 						<!-- <a href="#blogTemp" rel="modal:open" class="button medium">Read my blog</a> -->
@@ -216,7 +216,7 @@
 												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
 											<li class="fa fa-file-text-o">
 												<h3><a href="newestResume.pdf"> Full Resume</a></h3>
-												<h4>Last Updated: 5/11/16</h4>
+												<h4>Last Updated: 5/11/16 (<a href="newestResume.pdf"><purpleunderline>Download</u></purpleunderline></a>)</h4>
 												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
 										</ul>
 									</section>
@@ -328,17 +328,68 @@
 	</div>
 
 	<div id="mynote" style="display:none;">
-		<div class="image modalimg fit">
-			<img src="images/mynoteblackbars.png"/>
-		</div>
-		<p>Thanks for clicking MYNOTE.  That felt good. <a href="" rel="modal:close">Close</a> or press ESC</p>
+
+		<div class="jcarousel-wrapper">
+            <div class="jcarousel">
+	             <div class="outercarousel">
+	                <div class="xxx"><img src="images/mynote/mynotepreview.jpg"></div>
+	            </div>
+            </div>
+
+            <a href="" class="jcarousel-control-prev">&lsaquo;</a>
+            <a href="" class="jcarousel-control-next">&rsaquo;</a>
+            <p class="jcarousel-pagination"></p>
+        </div>
+
+        <h3>MyNote</h3>
+		<p>
+			<h4>What it does</h4>
+			It uses a Myo band as input, which sends data to an Apple TV display. The Myo band tracks wrist motion for cursor movement, and also actions such as clenching your fist to draw, expanding your hand to erase, and double tapping your thumb and index finger to move forward in the powerpoint (the background of the app is a powerpoint slide).
+
+			<h4>Inspiration</h4>
+			As my team and I were heading to a room with a white board, we thought how incredibly useful they were, yet how it was not easy for anyone to have a personal white board. And so we started thinking, perhaps we could replace white boards with our TVs, something around the same size that everyone has. This evolved into our replacement of SmartBoards, to save schools across America money, and also help enable teachers to have more technology in the classroom to enhance learning.
+
+			<h4>How it was made</h4>
+			We used the Myo API connected to an iPhone that processed the data. The iPhone then simulated a bluetooth controller that connected to the Apple TV, sending inputs.
+
+			<a href="" rel="modal:close">Close</a>
+		</p>
 	</div>
 
 	<div id="foodme" style="display:none;">
-		<div class="image modalimg fit">
-			<img src="images/foodme.png"/>
-		</div>
-		<p>Thanks for clicking FOODME.  That felt good. <a href="" rel="modal:close">Close</a> or press ESC</p>
+	
+		<div class="jcarousel-wrapper">
+            <div class="jcarousel">
+	             <div class="outercarousel">
+	                <div class="xxx"><img src="images/foodme/welcome.jpg"></div>
+	                <div class="xxx"><img src="images/foodme/whichmeal.jpg"></div>
+	                <div class="xxx"><img src="images/foodme/howfar.jpg"></div>
+	                <div class="xxx"><img src="images/foodme/pricerange.jpg"></div>
+	                <div class="xxx"><img src="images/foodme/meme.jpg"></div>
+	                <div class="xxx"><img src="images/foodme/restaurantprescreen.jpg"></div>
+	                <div class="xxx"><img src="images/foodme/restaurantscreen.jpg"></div>
+	            </div>
+            </div>
+
+            <a href="" class="jcarousel-control-prev">&lsaquo;</a>
+            <a href="" class="jcarousel-control-next">&rsaquo;</a>
+            <p class="jcarousel-pagination"></p>
+        </div>
+
+
+        <h3>foodme</h3>
+		<p>
+			<h4>What it does</h4>
+			foodme asks the user 4 simple questions then decides based on those and previous answers where the user should go. It then gives the user links to the Yelp page for the restaurant for more info, and a link to Google Map directions. At the end of the experience, the user can like or dislike the restaurant, affecting future decisions the app makes.
+
+			<h4>Inspiration</h4>
+			Think of how many times that you've had trouble picking a restaurant. It's incredibly hard actually deciding where to go, especially when you're in a large group, and everyone "doesn't care" where. Or perhaps you ask your significant other where to eat, yet you are both too "polite" to actually make a decision, and would both rather defer the question to the other.
+
+			<h4>How it was made</h4>
+			The app was coded in Objective-C using Xcode, and relies on the Yelp and Google Maps APIs. 
+
+			<a href="" rel="modal:close">Close</a>
+		</p>
 	</div>
 	</body>
 
