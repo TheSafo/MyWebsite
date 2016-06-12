@@ -32,33 +32,32 @@
 		<script src="js/jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" href="css/jquery.modal.css" type="text/css" media="screen" />
 
+	    <!-- Load local lib and tests FOR MODAL VIEW-->
+	    <link rel="stylesheet" href="css/remodal.css">
+	    <link rel="stylesheet" href="css/remodal-default-theme.css">
+	    <script src="js/remodal.js"></script>
+
+	    <style>
+	      .remodal-overlay.without-animation.remodal-is-opening,
+	      .remodal-overlay.without-animation.remodal-is-closing,
+	      .remodal.without-animation.remodal-is-opening,
+	      .remodal.without-animation.remodal-is-closing,
+	      .remodal-bg.without-animation.remodal-is-opening,
+	      .remodal-bg.without-animation.remodal-is-closing {
+	        animation: none;
+	      }
+		    </style>
+
 		<script>
 		$(function() {
 		    $('a[href*=#]:not([href=#])').click(function() {
 
 		    	var refthing = $(this).attr('href');
 
-		    	if($.inArray(refthing, ['#blogTemp', '#openpad', 
-		    		'#mynote', '#foodme']) >= 0) {
+		    	if($.inArray(refthing, ['#foodmemodal', '#openpadmodal', 
+		    		'#mynotemodal']) >= 0) {
 			    	console.log('Modal displaying');
 		      		// event.preventDefault();
-
-		      		var carousel = $(this).modal({
-		        		fadeDuration: 225
-		      		}).find("jcarousel");
-
-	      		 	// setTimeout(function() {carousel.jcarousel('reload'); console.log('Meme');}, 540)
-
-	      		 	setTimeout(function() {
-			    		// var width = carousel.innerWidth();
-			    		// var width = $(window).width() * .75 * .8 * .9;
-
-			    		carousel.jcarousel().css('width', '50%');
-			    		carousel.jcarousel('reload');
-
-			    		console.log('Memed');
-		            	// carousel.jcarousel('items').css('width', width + 'px');
-	      		 	}, 1000)
 
 		      		return false;
 	      		}
@@ -153,11 +152,10 @@
 						<!-- <p><strong>Saf?</strong></p> -->
 						<h6>About Me</h6>
 
-						<!-- <h1>I'm Jake</h1> -->
+						<p>I'm Jake wow! This is really fun! Wow!</p>
 
 						<!-- Link to open the modal -->
-						<!-- <a href="#blogTemp" rel="modal:open" class="button medium">Read my blog</a> -->
-						<!-- <p><a href="#blogTemp" rel="modal:open">Open Modal</a></p> -->
+						<!-- <a href="" data-remodal-target="modal" class="button medium">TESTBUTTON</a> -->
 					</section>
 				</div>
 
@@ -168,17 +166,17 @@
 								<section class="4u"> <a href="#" class="image featured"><img src="images/openpad.png" alt=""></a>
 									<div class="box">
 										<p>Openpad is a c++ library that allows you to make your game playable using smartphones with the app as a controller.</p>
-										<a href="#openpad" rel="modal:open" class="button">Read More</a> </div>
+										<a href="" data-remodal-target="openpadmodal" class="button">Read More</a> </div>
 								</section>
 								<section class="4u"> <a href="#" class="image featured"><img src="images/mynoteblackbars.png" alt=""></a>
 									<div class="box">
 										<p>MyNote is an Apple TV app that allows the user to draw on the screen and go through a slideshow using a Myo arm band.</p>
-										<a href="#mynote" rel="modal:open" class="button">Read More</a> </div>
+										<a href="" data-remodal-target="mynotemodal" class="button">Read More</a> </div>
 								</section>
 								<section class="4u"> <a href="#" class="image featured"><img src="images/foodme.png" alt=""></a>
 									<div class="box">
 										<p>FoodMe is a an app that asks the user four questions then chooses a nearby restuaraunt to eat at based on previous choices.</p>
-										<a href="#foodme" rel="modal:open" class="button">Read More</a> </div>
+										<a href="" data-remodal-target="foodmemodal" class="button">Read More</a> </div>
 								</section>
 							</div>
 <!-- 							<div class="row no-collapse-1">
@@ -294,8 +292,86 @@
 			</div>
 		</div>
 
+	<!-- Remodal code -->
+
+	<!-- You can define the global options -->
+	<script>
+	  // window.REMODAL_GLOBALS = {
+	  //   NAMESPACE: 'remodal',
+	  //   DEFAULTS: {
+	  //     hashTracking: true,
+	  //     closeOnConfirm: true,
+	  //     closeOnCancel: true,
+	  //     closeOnEscape: true,
+	  //     closeOnOutsideClick: true,
+	  //     modifier: ''
+	  //   }
+	  // };
+	</script>
+
+	<div class = "remodal" data-remodal-id="openpadmodal">
+		<a data-remodal-action="close" class="remodal-close"></a>
+
+		<p>Thanks for clicking Openpad.  That felt good.</p>
+	</div>
+
+	<div class = "remodal" data-remodal-id="mynotemodal">
+		<a data-remodal-action="close" class="remodal-close"></a>
+
+		<h3>MyNote</h3>
+		<p>
+			<h4>What it does</h4>
+			It uses a Myo band as input, which sends data to an Apple TV display. The Myo band tracks wrist motion for cursor movement, and also actions such as clenching your fist to draw, expanding your hand to erase, and double tapping your thumb and index finger to move forward in the powerpoint (the background of the app is a powerpoint slide).
+
+			<h4>Inspiration</h4>
+			As my team and I were heading to a room with a white board, we thought how incredibly useful they were, yet how it was not easy for anyone to have a personal white board. And so we started thinking, perhaps we could replace white boards with our TVs, something around the same size that everyone has. This evolved into our replacement of SmartBoards, to save schools across America money, and also help enable teachers to have more technology in the classroom to enhance learning.
+
+			<h4>How it was made</h4>
+			We used the Myo API connected to an iPhone that processed the data. The iPhone then simulated a bluetooth controller that connected to the Apple TV, sending inputs.
+		</p>
+	</div>
+
+	<div class = "remodal" data-remodal-id="foodmemodal">
+		<a data-remodal-action="close" class="remodal-close"></a>
+
+		<h3>foodme</h3>
+		<p>
+			<h4>What it does</h4>
+			foodme asks the user 4 simple questions then decides based on those and previous answers where the user should go. It then gives the user links to the Yelp page for the restaurant for more info, and a link to Google Map directions. At the end of the experience, the user can like or dislike the restaurant, affecting future decisions the app makes.
+
+			<h4>Inspiration</h4>
+			Think of how many times that you've had trouble picking a restaurant. It's incredibly hard actually deciding where to go, especially when you're in a large group, and everyone "doesn't care" where. Or perhaps you ask your significant other where to eat, yet you are both too "polite" to actually make a decision, and would both rather defer the question to the other.
+
+			<h4>How it was made</h4>
+			The app was coded in Objective-C using Xcode, and relies on the Yelp and Google Maps APIs. 
+		</p>
+	</div>
+
+	<!-- <div class="remodal" data-remodal-id="modal"> -->
+  		<!-- <a data-remodal-action="close" class="remodal-close"></a> -->
+	<!-- </div> -->
+
+	<!-- <div class="remodal" data-remodal-id="modal2" -->
+  		data-remodal-options="hashTracking: false,
+  		  closeOnConfirm:false,closeOnCancel:  false, closeOnEscape: false , closeOnOutsideClick: false,
+    		modifier : without-animation with-test-class">
+
+  		<a data-remodal-action="close" class="remodal-close"></a>
+  		<a data-remodal-action="cancel" class="remodal-cancel" href="#">Cancel</a>
+  		<a data-remodal-action="confirm" class="remodal-confirm" href="#">OK</a>	
+	<!-- </div> -->
+
+	<!-- <div data-remodal-id="modal3"> -->
+  		<!-- <a data-remodal-action="close" class="remodal-close"></a> -->
+	<!-- </div> -->
+
+	<!-- <div class="remodal" data-remodal-id="!modal4/test"> -->
+	  <!-- <a data-remodal-action="close" class="remodal-close"></a> -->
+	<!-- </div> -->
+
+
 	<!-- Modal HTML embedded directly into document -->
-	<div id="blogTemp" style="display:none;">
+	<!-- <div id="blogTemp" style="display:none;">
 
 		<div class="jcarousel-wrapper">
             <div class="jcarousel">
@@ -321,9 +397,9 @@
 		</p>
 
 		<div>
-	</div>
+	</div> -->
 
-	<div id="openpad" style="display:none;">
+	<!-- <div id="openpad" style="display:none;">
 		<p>Thanks for clicking OPENPAD.  That felt good. <a href="" rel="modal:close">Close</a> or press ESC</p>
 	</div>
 
@@ -355,9 +431,9 @@
 
 			<a href="" rel="modal:close">Close</a>
 		</p>
-	</div>
+	</div> -->
 
-	<div id="foodme" style="display:none;">
+	<!-- <div id="foodme" style="display:none;">
 
 		<div class="jcarousel-wrapper">
             <div class="jcarousel">
@@ -391,7 +467,6 @@
 
 			<a href="" rel="modal:close">Close</a>
 		</p>
-	</div>
+	</div> -->
 	</body>
-
 </html>
