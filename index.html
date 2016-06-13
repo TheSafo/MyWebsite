@@ -32,6 +32,10 @@
 		<script src="js/jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" href="css/jquery.modal.css" type="text/css" media="screen" />
 
+		<!--Load slippry (photo slider) -->
+		<script src="js/slippry.min.js"></script>
+		<link rel="stylesheet" href="css/slippry.css" />
+
 	    <!-- Load local lib and tests FOR MODAL VIEW-->
 	    <link rel="stylesheet" href="css/remodal.css">
 	    <link rel="stylesheet" href="css/remodal-default-theme.css">
@@ -49,6 +53,33 @@
 		    </style>
 
 		<script>
+
+		jQuery(document).ready(function(){
+		  jQuery('selector').slippry()
+		});
+
+		// jQuery('#pictures-demo').slippry({
+		//   // general elements & wrapper
+		//   slippryWrapper: '<div class="sy-box pictures-slider" />', // wrapper to wrap everything, including pager
+
+		//   // options
+		//   adaptiveHeight: false, // height of the sliders adapts to current slide
+		//   captions: false, // Position: overlay, below, custom, false
+
+		//   // pager
+		//   pager: false,
+		  
+		//   // controls
+		//   controls: false,
+		//   autoHover: false,
+
+		//   // transitions
+		//   transition: 'kenburns', // fade, horizontal, kenburns, false
+		//   kenZoom: 140,
+		//   speed: 2000 // time the transition takes (ms)
+		// });
+
+
 		$(function() {
 		    $('a[href*=#]:not([href=#])').click(function() {
 
@@ -211,11 +242,13 @@
 											<li class="fa fa-university">
 												<h3><a href="http://www.brown.edu">Brown University</a></h3>
 												<h4>2015+</h4>
-												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
+												<span>Currently am a rising sophomore, majoring in Computer Engineering</span>
+											 </li>
 											<li class="fa fa-graduation-cap">
 												<h3> <a href="http://www.hw.com"> Harvard-Westlake High School</a></h3>
 												<h4>2009-2015</h4>
-												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
+												<span>Graduated Cum Laude. Took 3 years of Computer Science courses.</span> 
+												</li>
 										</ul>
 									</section>
 								</div>
@@ -225,10 +258,11 @@
 											<li class="fa fa-file-text-o">
 												<h3><a href="JakeSafersteinResumeMay16.pdf"> Resume</a></h3>
 												<h4>Last Updated: 5/16/16 (<a href="JakeSafersteinResumeMay16.pdf"><purpleunderline>Download</u></purpleunderline></a>)</h4>
-												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
-											<li class="fa fa-road">
-												<h3>Idk</h3>
-												<span>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Maecenas condimentum enim tincidunt risus accumsan.</span> </li>
+												 </li>
+											<li class="fa fa-clock-o">
+												<h3>What I'm Currently Doing</h3>
+												<span>Interning as a software engineer for a stealth startup on their iOS app.</span> 
+												</li>
 										</ul>
 									</section>
 								</div>
@@ -246,17 +280,18 @@
 						<span class="byline">Feel free to contact me with any questions you have</span>
 						<span class="byline"> jakesafo@gmail.com</span>
 					</header>
-					<form method="post" action="#">
+
+					<form method="GET" action="mailto:jakesafo@gmail.com">
 						<div class="row half">
 							<div class="12u">
 								<input class="text" type="text" name="name" id="name" placeholder="Name" />
 							</div>
 						</div>
-						<div class="row half">
+<!-- 						<div class="row half">
 							<div class="12u">
 								<input class="text" type="text" name="email" id="email" placeholder="Email" />
 							</div>
-						</div>
+						</div> -->
 						<div class="row half">
 							<div class="12u">
 								<textarea name="message" id="message" placeholder="Message"></textarea>
@@ -312,13 +347,36 @@
 	<div class = "remodal" data-remodal-id="openpadmodal">
 		<a data-remodal-action="close" class="remodal-close"></a>
 
-		<p>Thanks for clicking Openpad.  That felt good.</p>
+		<h2>Openpad</h2>
+
+		<p>
+			<h4>What it does</h4>
+			Openpad is a library and companion app that allows any game that implements it to use iPhones as a controller. When the user opens the iPhone app, it searches the Wi-Fi network for any available games, and once connected received 
+
+			<h4>Inspiration</h4>
+			One day in school, some students had brought in a new game that was controller-based, and we realized what a hassle it was to plugin all these controllers into a single laptop. So, we decided why not create a way for everyone to just connect their phones?
+
+			<h4>How it was made</h4>
+			I worked on the iPhone app, which was coded in Objective-C. The app used the GCDAsyncSocket library to communicate with UDP/TCP packets to the server.
+		</p>
 	</div>
 
 	<div class = "remodal" data-remodal-id="mynotemodal">
 		<a data-remodal-action="close" class="remodal-close"></a>
+<!-- 
+		<ul id="slippry-demo">
+		  <li>
+		    <a href="#slide1"><img src="images/foodme/howfar.jpg" alt="Welcome to Slippry!"></a>
+		  </li>
+		  <li>
+		    <a href="#slide2"><img src="images/foodme/meme.jpg"  alt="This is an awesome jQuery slider plugin."></a>
+		  </li>
+		  <li>
+		    <a href="#slide3"><img src="images/foodme/pricerange.jpg" alt="Check it out, you are going to <span class='red'>♥</span> it :)"></a>
+		  </li>
+		</ul> -->
 
-		<h3>MyNote</h3>
+		<h2>MyNote</h2>
 		<p>
 			<h4>What it does</h4>
 			It uses a Myo band as input, which sends data to an Apple TV display. The Myo band tracks wrist motion for cursor movement, and also actions such as clenching your fist to draw, expanding your hand to erase, and double tapping your thumb and index finger to move forward in the powerpoint (the background of the app is a powerpoint slide).
@@ -334,7 +392,7 @@
 	<div class = "remodal" data-remodal-id="foodmemodal">
 		<a data-remodal-action="close" class="remodal-close"></a>
 
-		<h3>foodme</h3>
+		<h2>foodme</h2>
 		<p>
 			<h4>What it does</h4>
 			foodme asks the user 4 simple questions then decides based on those and previous answers where the user should go. It then gives the user links to the Yelp page for the restaurant for more info, and a link to Google Map directions. At the end of the experience, the user can like or dislike the restaurant, affecting future decisions the app makes.
@@ -352,13 +410,13 @@
 	<!-- </div> -->
 
 	<!-- <div class="remodal" data-remodal-id="modal2" -->
-  		data-remodal-options="hashTracking: false,
+<!--   		data-remodal-options="hashTracking: false,
   		  closeOnConfirm:false,closeOnCancel:  false, closeOnEscape: false , closeOnOutsideClick: false,
-    		modifier : without-animation with-test-class">
+    		modifier : without-animation with-test-class"> -->
 
-  		<a data-remodal-action="close" class="remodal-close"></a>
-  		<a data-remodal-action="cancel" class="remodal-cancel" href="#">Cancel</a>
-  		<a data-remodal-action="confirm" class="remodal-confirm" href="#">OK</a>	
+  		<!-- <a data-remodal-action="close" class="remodal-close"></a> -->
+  		<!-- <a data-remodal-action="cancel" class="remodal-cancel" href="#">Cancel</a> -->
+  		<!-- <a data-remodal-action="confirm" class="remodal-confirm" href="#">OK</a>	 -->
 	<!-- </div> -->
 
 	<!-- <div data-remodal-id="modal3"> -->
