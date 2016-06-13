@@ -387,6 +387,7 @@
 			position: relative;
 			padding: 3em 0em 3em 6em;
 			border-top: solid 1px rgba(255, 255, 255, 0.2);
+			height: 12em;
 		}
 
 		ul.style > :first-child {
